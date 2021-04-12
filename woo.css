@@ -25,7 +25,6 @@
 
 .slide-left {
     position: absolute;
-    background: blue;
     transform: translateX(-500%);
     -webkit-transform: translateX(-500%);
     animation: slide-in 0.5s forwards;
@@ -34,7 +33,6 @@
 
 .slide-right {
     position: absolute;
-    background: blue;
     transform: translateX(500%);
     -webkit-transform: translateX(500%);
     animation: slide-in 0.5s forwards;
@@ -47,7 +45,6 @@
 
 .slide-up {
     position: absolute;
-    background: blue;
     transform: translateY(500%);
     -webkit-transform: translateY(500%);
     animation: slide-in 0.5s forwards;
@@ -56,7 +53,6 @@
 
 .slide-down {
     position: absolute;
-    background: blue;
     transform: translateY(-500%);
     -webkit-transform: translateY(-500%);
     animation: slide-in 0.5s forwards;
@@ -67,7 +63,7 @@
     100% { transform: translateY(0%); }
 }
 
-.spin {
+.spin-left {
   -webkit-animation-name: spin;
   -webkit-animation-duration: 1200ms;
   -webkit-animation-iteration-count: infinite;
@@ -78,6 +74,27 @@
 @-webkit-keyframes spin {
     from { -webkit-transform: rotate(0deg); }
     to { -webkit-transform: rotate(360deg); }
+}
+
+.spin-right {
+  -webkit-animation-name: spin-right;
+  -webkit-animation-duration: 1200ms;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  -o-transition: rotate(360deg);
+}
+
+@-webkit-keyframes spin-right {
+    from { -webkit-transform: rotate(360deg); }
+    to { -webkit-transform: rotate(0deg); }
+}
+
+.shake {
+  animation: shake 1s cubic-bezier(.36,.07,.19,.97) both;
+  transform: translate3d(0, 0, 0);
+  -webkit-animation-iteration-count: infinite;
+  backface-visibility: hidden;
+  perspective: 1000px;
 }
 
 .grow {
@@ -91,3 +108,38 @@
     transform: scale(1);
   }
 }
+
+@-webkit-keyframes shake {
+   10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+  
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+
+.stretch {
+  animation: stretch 1s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  opacity: 1;
+}
+
+@-webkit-keyframes stretch {
+    from {
+        transform: scaleY(.8);
+    }
+    to {
+        transform: scaleY(1.2);
+    }
+}
+
