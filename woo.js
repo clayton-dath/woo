@@ -13,7 +13,7 @@ $("#window").click(function (e) {
 
     var size = Math.floor(Math.random() * 250) + 50;
 
-    var append_image = "<img class='woo_man " + spin_picked + " " + animation_picked + "' src='woo_man.png' style='top:" + topy + "px; left:" + topx + "px; height:" + size + "px'>";
+    var append_image = "<img class='woo_man " + spin_picked + " " + animation_picked + "' src='woo_man.PNG' style='top:" + topy + "px; left:" + topx + "px; height:" + size + "px'>";
     var element = $('#window').append(append_image);
 
     const woos = ['woo1.m4a', 'woo2.m4a', 'woo3.m4a', 'woo4.m4a', 'woo5.m4a', 'woo6.m4a', 'woo7.m4a', 'woo8.m4a'];
